@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="DesiData">
+  <rect width="512" height="512" rx="112" fill="#f97316"/>
+  <path d="M124 104h112c111 0 174 56 174 152S347 408 236 408H124V104zm102 76h-20v152h20c61 0 94-25 94-76s-33-76-94-76z" fill="#fff"/>
+</svg>

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "desidata",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Search and preview DesiData's published India-focused dataset catalogue.",
+  "author": {
+    "name": "DesiData",
+    "url": "https://www.desidata.in"
+  },
+  "homepage": "https://www.desidata.in",
+  "repository": "https://github.com/krishnakaushik195/desidata",
+  "keywords": [
+    "India",
+    "datasets",
+    "open data",
+    "research",
+    "CSV"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "DesiData",
+        "shortDescription": "Find and preview India datasets",
+        "longDescription": "Search DesiData's published India-focused dataset catalogue, inspect dataset details and source links, preview a small sample, and get notebook or Python loader examples. Search and previews are read-only and do not require a DesiData or Supabase key. Full dataset downloads use the user's own DesiData DD_TOKEN through the normal DesiData download flow.",
+        "developerName": "DesiData",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Read"
+        ],
+        "websiteURL": "https://www.desidata.in",
+        "supportURL": "https://www.desidata.in/community",
+        "privacyPolicyURL": "https://www.desidata.in/privacy",
+        "logo": "./assets/desidata-plugin.svg",
+        "composerIcon": "./assets/desidata-plugin.svg",
+        "defaultPrompt": [
+          "Use DesiData to search published India-focused datasets. Show the source, licence, row count, and a small preview when useful."
+        ]
+      }
+    }
+  }
+}
