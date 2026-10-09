@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.krishnakaushik195/desidata-mcp",
   "title": "DesiData",
-  "description": "Search and preview published India-focused datasets from DesiData. Inspect source, licence, and row-count details, preview a sample, and get notebook or Python loader examples.",
+  "description": "Search India datasets; inspect sources, licences and previews; get notebook and Python examples.",
   "version": "0.1.0",
   "websiteUrl": "https://www.desidata.in",
   "repository": {
