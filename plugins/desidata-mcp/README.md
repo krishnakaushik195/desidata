@@ -9,7 +9,7 @@ DesiData helps AI coding assistants find published India-focused datasets and in
 - Preview a small sample of a CSV dataset.
 - Get a notebook link or Python loader example.
 
-Search and previews do not require a DesiData account, a DesiData API token, or a Supabase account. The MCP server is hosted by DesiData; its backend credentials are not shared with the client.
+Search and previews are available without signing in. The MCP service is hosted and managed by DesiData.
 
 The MCP does not return whole CSV files. Full downloads use the user's own DesiData `DD_TOKEN` through the regular DesiData download flow. Never paste a token into an AI chat or commit it to a project.
 
@@ -41,9 +41,10 @@ codex mcp list
 ### Gemini CLI
 
 ```sh
-gemini mcp add --transport http --scope user desidata https://lqcxdxjncdzzkwgveydz.supabase.co/functions/v1/mcp
-gemini mcp list
+gemini extensions install https://github.com/krishnakaushik195/desidata
 ```
+
+Restart Gemini CLI and run `/mcp list` to confirm the connection. You can also connect directly with `gemini mcp add --transport http --scope user desidata https://lqcxdxjncdzzkwgveydz.supabase.co/functions/v1/mcp`.
 
 Gemini Apps custom-app availability and account-linking requirements are controlled by Google and may differ from Gemini CLI.
 

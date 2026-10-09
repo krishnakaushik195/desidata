@@ -64,3 +64,11 @@ Have a dataset request, notebook correction, or benchmark suggestion? Open a Git
 The [DesiData MCP plugin](plugins/desidata-mcp/) lets AI assistants search the published catalogue, inspect dataset metadata and provenance, preview a small sample, and get notebook or Python loader examples. Search and previews are read-only and do not need an account or API token. Full dataset downloads continue to use the user's own DesiData `DD_TOKEN` through the normal download flow.
 
 The same remote MCP service works with Cursor, Codex, and Gemini CLI. See the plugin [setup guide](plugins/desidata-mcp/README.md) for connection instructions and current limits.
+
+### Install in Gemini CLI
+
+```sh
+gemini extensions install https://github.com/krishnakaushik195/desidata
+```
+
+Restart Gemini CLI after installation, then run `/mcp list` to confirm DesiData is connected. Search and previews work without signing in; full dataset downloads use the user's own DesiData `DD_TOKEN` through the regular download flow.

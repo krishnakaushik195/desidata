@@ -22,7 +22,7 @@
       "interface": {
         "displayName": "DesiData",
         "shortDescription": "Find and preview India datasets",
-        "longDescription": "Search DesiData's published India-focused dataset catalogue, inspect dataset details and source links, preview a small sample, and get notebook or Python loader examples. Search and previews are read-only and do not require a DesiData or Supabase key. Full dataset downloads use the user's own DesiData DD_TOKEN through the normal DesiData download flow.",
+        "longDescription": "Search DesiData's published India-focused dataset catalogue, inspect dataset details and source links, preview a small sample, and get notebook or Python loader examples. Search and previews work without signing in. Full dataset downloads use the user's own DesiData DD_TOKEN through the normal DesiData download flow.",
         "developerName": "DesiData",
         "category": "Developer Tools",
         "capabilities": [
