@@ -26,6 +26,20 @@ The endpoint is currently public and does not use OAuth. Do not add a client sec
 
 Users can install it manually from the MCP URL while the marketplace review is pending.
 
+## Official MCP Registry
+
+The public registry publishes MCP server metadata for compatible clients; it does not host or proxy the DesiData server. The repository-root `server.json` declares the public Streamable HTTP endpoint under the GitHub namespace `io.github.krishnakaushik195/desidata-mcp`.
+
+From the repository root, install the official `mcp-publisher` CLI, then run:
+
+```powershell
+mcp-publisher validate .\server.json
+mcp-publisher login github
+mcp-publisher publish .\server.json
+```
+
+The GitHub login opens an OAuth flow. Sign in with the GitHub account that owns this repository; do not create or paste a personal access token for the interactive flow. Publishing adds the record directly to the public registry. Increment `server.json`'s version before publishing a later metadata update. The registry is currently in preview.
+
 ## Gemini
 
 Gemini CLI can connect directly to the same remote MCP URL; the command is in `README.md`. Gemini Apps custom apps are connected per Google account and are subject to Google's availability and account-linking requirements. They do not become a public marketplace listing just because this package is published.
