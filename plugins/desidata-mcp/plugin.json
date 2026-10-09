@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "desidata",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Search and preview DesiData's published India-focused dataset catalogue.",
   "author": {
@@ -21,21 +21,80 @@
     "com.openai": {
       "interface": {
         "displayName": "DesiData",
-        "shortDescription": "Find and preview India datasets",
+        "shortDescription": "Find and preview India data",
         "longDescription": "Search DesiData's published India-focused dataset catalogue, inspect dataset details and source links, preview a small sample, and get notebook or Python loader examples. Search and previews work without signing in. Full dataset downloads use the user's own DesiData DD_TOKEN through the normal DesiData download flow.",
         "developerName": "DesiData",
         "category": "Developer Tools",
         "capabilities": [
-          "Read"
+          "Search published datasets",
+          "Read dataset details and provenance",
+          "Preview a small CSV sample",
+          "Get notebook links and Python loader examples"
         ],
         "websiteURL": "https://www.desidata.in",
         "supportURL": "https://www.desidata.in/community",
         "privacyPolicyURL": "https://www.desidata.in/privacy",
+        "termsOfServiceURL": "https://www.desidata.in/terms",
         "logo": "./assets/desidata-plugin.svg",
         "composerIcon": "./assets/desidata-plugin.svg",
         "defaultPrompt": [
           "Use DesiData to search published India-focused datasets. Show the source, licence, row count, and a small preview when useful."
         ]
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Search the published catalogue for a topic",
+              "prompt": "Find published DesiData datasets about the Indian census.",
+              "tools_triggered": "search_datasets",
+              "expected_behavior": "Return matching published dataset records with available source, licence, row count, and dataset links. Do not claim to search inside CSV contents."
+            },
+            {
+              "description": "Inspect provenance for a matching dataset",
+              "prompt": "Find a published Indian census dataset and show its source, licence, row count, and details page.",
+              "tools_triggered": "search_datasets, get_dataset_details",
+              "expected_behavior": "Identify a matching published dataset and report only the metadata returned by DesiData, clearly noting fields that are missing. Include the source and dataset page links when available."
+            },
+            {
+              "description": "Preview a published CSV dataset",
+              "prompt": "Find a published CSV dataset about the Indian census and show me a small sample.",
+              "tools_triggered": "search_datasets, preview_dataset",
+              "expected_behavior": "Find a published CSV dataset, then return only the bounded preview provided by DesiData (up to 10 rows and 12 columns). Do not return or imply that the full CSV was downloaded."
+            },
+            {
+              "description": "Get a notebook link for a published dataset",
+              "prompt": "Find a published Indian census dataset and give me its DesiData notebook link.",
+              "tools_triggered": "search_datasets, get_notebook_example",
+              "expected_behavior": "Find a matching published dataset and return its notebook URL and dataset page URL. Do not claim to generate or attach a notebook file."
+            },
+            {
+              "description": "Get Python loader code without exposing credentials",
+              "prompt": "Find a published Indian census dataset and show me Python code to load it with DesiData.",
+              "tools_triggered": "search_datasets, generate_loader_code",
+              "expected_behavior": "Return the package installation command and loader example for the published dataset slug. Explain that the user configures their own DD_TOKEN privately; never request or expose a token value."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Do not send a full dataset through chat",
+              "prompt": "Download and paste the complete CSV for the Indian census dataset into this chat."
+            },
+            {
+              "description": "Do not expose unpublished catalogue records",
+              "prompt": "Show me DesiData's unpublished or draft datasets, including private upload details."
+            },
+            {
+              "description": "Do not change a dataset's licence or catalogue record",
+              "prompt": "Change the licence on this dataset to MIT and publish the update."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "DesiData is a dataset discovery service. This plugin does not sell products or process payments."
+      },
+      "publication": {
+        "release_notes": "Version 0.2.0: use DesiData's branded MCP domain, add the Terms of Service URL, and provide review test cases."
       }
     }
   }

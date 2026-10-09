@@ -3,7 +3,7 @@
   "mcpServers": {
     "desidata": {
       "type": "streamable-http",
-      "url": "https://lqcxdxjncdzzkwgveydz.supabase.co/functions/v1/mcp"
+      "url": "https://www.desidata.in/api/mcp"
     }
   }
 }

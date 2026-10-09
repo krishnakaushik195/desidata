@@ -23,7 +23,7 @@ Add this server to Cursor's global `mcp.json` (or install the reviewed marketpla
 {
   "mcpServers": {
     "desidata": {
-      "url": "https://lqcxdxjncdzzkwgveydz.supabase.co/functions/v1/mcp"
+      "url": "https://www.desidata.in/api/mcp"
     }
   }
 }
@@ -34,7 +34,7 @@ Reload Cursor, then find DesiData under **Customize → MCP**.
 ### Codex
 
 ```sh
-codex mcp add desidata --url https://lqcxdxjncdzzkwgveydz.supabase.co/functions/v1/mcp
+codex mcp add desidata --url https://www.desidata.in/api/mcp
 codex mcp list
 ```
 
@@ -44,7 +44,7 @@ codex mcp list
 gemini extensions install https://github.com/krishnakaushik195/desidata
 ```
 
-Restart Gemini CLI and run `/mcp list` to confirm the connection. You can also connect directly with `gemini mcp add --transport http --scope user desidata https://lqcxdxjncdzzkwgveydz.supabase.co/functions/v1/mcp`.
+Restart Gemini CLI and run `/mcp list` to confirm the connection. You can also connect directly with `gemini mcp add --transport http --scope user desidata https://www.desidata.in/api/mcp`.
 
 Gemini Apps custom-app availability and account-linking requirements are controlled by Google and may differ from Gemini CLI.
 

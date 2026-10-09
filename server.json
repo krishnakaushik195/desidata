@@ -3,7 +3,7 @@
   "name": "io.github.krishnakaushik195/desidata-mcp",
   "title": "DesiData",
   "description": "Search India datasets; inspect sources, licences and previews; get notebook and Python examples.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "websiteUrl": "https://www.desidata.in",
   "repository": {
     "url": "https://github.com/krishnakaushik195/desidata",
@@ -12,7 +12,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://lqcxdxjncdzzkwgveydz.supabase.co/functions/v1/mcp"
+      "url": "https://www.desidata.in/api/mcp"
     }
   ]
 }

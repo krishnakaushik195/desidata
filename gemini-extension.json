@@ -4,7 +4,7 @@
   "description": "Search published India-focused datasets, inspect sources and licences, preview samples, and get Python or notebook examples.",
   "mcpServers": {
     "desidata": {
-      "httpUrl": "https://lqcxdxjncdzzkwgveydz.supabase.co/functions/v1/mcp"
+      "httpUrl": "https://www.desidata.in/api/mcp"
     }
   }
 }
